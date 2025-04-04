@@ -1,0 +1,4 @@
+[tool.commitizen]
+name = "pdf-generator"
+version = "0.1.0"
+tag_format = "v$version"
