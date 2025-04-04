@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+psycopg2-binary
+sqlalchemy
+redis
+python-dotenv
+celery
+weasyprint
+aiofiles
+python-multipart
