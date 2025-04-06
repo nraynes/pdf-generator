@@ -23,4 +23,8 @@ def download_pdf(job_id: str):
     path = f"generated_pdfs/{job_id}.pdf"
     if not os.path.exists(path):
         raise HTTPException(status_code=404, detail="PDF not found")
-    return FileResponse(path, media_type='application/pdf', filename="document.pdf")
+    return FileResponse(
+        path,
+        media_type='application/pdf',
+        filename="document.pdf"
+    )
