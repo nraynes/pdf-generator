@@ -1,3 +1,9 @@
+## v0.5.0 (2025-04-06)
+
+### Feat
+
+- added entry point to run router from
+
 ## v0.4.0 (2025-04-06)
 
 ### Feat
