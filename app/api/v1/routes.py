@@ -1,4 +1,5 @@
-from fastapi import APIRouter, UploadFile, File
+import os
+from fastapi import APIRouter, UploadFile, File, HTTPException
 from app.workers.tasks import create_pdf_task
 
 router = APIRouter()
@@ -20,8 +21,6 @@ def check_status(job_id: str):
 def download_pdf(job_id: str):
     from fastapi.responses import FileResponse
     path = f"generated_pdfs/{job_id}.pdf"
-    return FileResponse(
-        path,
-        media_type='application/pdf',
-        filename="document.pdf"
-    )
+    if not os.path.exists(path):
+        raise HTTPException(status_code=404, detail="PDF not found")
+    return FileResponse(path, media_type='application/pdf', filename="document.pdf")
