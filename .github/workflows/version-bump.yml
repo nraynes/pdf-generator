@@ -38,4 +38,5 @@ jobs:
 
       - name: Push changes and tags
         run: |
-          git push origin HEAD:main --follow-tags
+          git push origin HEAD:main
+          git push origin --tags
