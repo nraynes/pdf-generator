@@ -7,7 +7,7 @@ router = APIRouter()
 
 @router.post("/generate")
 async def generate_pdf(data: UploadFile = File(...)):
-    job_id = create_pdf_task.delay(data.filename, await data.read())
+    job_id = create_pdf_task.delay(await data.read())
     return {"job_id": job_id.id}
 
 

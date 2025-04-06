@@ -8,7 +8,7 @@ celery = Celery("worker", broker=redis_url, backend=redis_url)
 
 
 @celery.task(name="create_pdf_task")
-def create_pdf_task(filename: str, content: bytes):
+def create_pdf_task(content: bytes):
     job_id = create_pdf_task.request.id
     output_path = f"generated_pdfs/{job_id}.pdf"
     os.makedirs("generated_pdfs", exist_ok=True)
