@@ -1,3 +1,9 @@
+## v0.6.1 (2025-04-06)
+
+### Fix
+
+- support 404 edge case not found
+
 ## v0.6.0 (2025-04-06)
 
 ### Feat
