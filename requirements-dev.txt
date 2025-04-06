@@ -2,6 +2,7 @@
 
 flake8
 pytest
+httpx
 black
 mypy
 commitizen
