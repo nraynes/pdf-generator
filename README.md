@@ -112,10 +112,30 @@ curl -X 'GET' \
 
 ### Setting Up the Development Environment
 
-- **Install Dependencies**:
+1. **Install Dependencies**:
 
    ```bash
    pip install -r requirements-dev.txt
+   ```
+
+   MacOS users:
+   ```bash
+   brew install cairo pango gdk-pixbuf libffi libxml2 libxslt gobject-introspection
+   export PKG_CONFIG_PATH="/opt/homebrew/lib/pkgconfig:/opt/homebrew/opt/libffi/lib/pkgconfig:$PKG_CONFIG_PATH"
+   export DYLD_LIBRARY_PATH="/opt/homebrew/lib:$DYLD_LIBRARY_PATH"
+   export PYTHONPATH=$(pwd)
+   ```
+   
+2. **Run the Application Locally**:
+
+   ```bash
+   uvicorn app.main:app --reload
+   ```
+
+3. **Start the Celery Worker**:
+
+   ```bash
+   celery -A app.workers.tasks worker --loglevel=info
    ```
 
 ### Linting and Formatting
