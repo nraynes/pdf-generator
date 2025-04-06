@@ -1,3 +1,9 @@
+## v0.6.2 (2025-04-06)
+
+### Refactor
+
+- removed unused parameter
+
 ## v0.6.1 (2025-04-06)
 
 ### Fix
