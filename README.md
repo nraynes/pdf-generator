@@ -35,7 +35,11 @@ The **PDF Generator Microservice** is a FastAPI-based application that converts 
 
 2. **Set Up Environment Variables**:
 
-   Adjust the `.env` file in the project root with the following content as necessary for your environment.
+   Create a `.env` file in the project root with the following content as necessary for your environment.
+   ```bash
+   REDIS_URL=redis://redis:6379/0
+   DATABASE_URL=postgresql://postgres:password@db:5432/pdfs
+   ```
 
 3. **Build and Start the Services**:
 
@@ -118,7 +122,7 @@ curl -X 'GET' \
    pip install -r requirements-dev.txt
    ```
 
-   MacOS users:
+   MacOS users (Add this to your .bashprofile or .zprofile for global use, PYTHONPATH is path to project clone):
    ```bash
    brew install cairo pango gdk-pixbuf libffi libxml2 libxslt gobject-introspection
    export PKG_CONFIG_PATH="/opt/homebrew/lib/pkgconfig:/opt/homebrew/opt/libffi/lib/pkgconfig:$PKG_CONFIG_PATH"
