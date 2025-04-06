@@ -18,6 +18,7 @@ jobs:
     - name: Lint
       run: |
         pip install flake8
+        export PYTHONPATH=$(pwd)
         flake8 app
     - name: Test placeholder
       run: |
