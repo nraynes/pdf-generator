@@ -1,3 +1,9 @@
+## v0.6.0 (2025-04-06)
+
+### Feat
+
+- added docker and docker compose files to run server
+
 ## v0.5.0 (2025-04-06)
 
 ### Feat
